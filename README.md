@@ -9,7 +9,7 @@ Neural Information Processing Systems (NeurIPS), 2023.
 [arXiv](https://arxiv.org/abs/2310.19694)  
 [OpenReview](https://openreview.net/forum?id=1ZvEtnrHS1&noteId=1ZvEtnrHS1)
 
-![](./docs/figures/comp_method.pdf)
+![](./docs/figures/comp_method.png)
 
 
 
