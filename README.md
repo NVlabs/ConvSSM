@@ -1,6 +1,6 @@
 # ConvSSM
 
-COMING SOON!!
+**COMING SOON!!**
 
 This repository provides the official JAX implementation for the
 paper:
