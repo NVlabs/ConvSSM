@@ -2,11 +2,16 @@
 
 COMING SOON!!
 
-This repository provides the implementation for the
+This repository provides the official JAX implementation for the
 paper:
 
-**Convolutional State Space Models for Long-Range Spatiotemporal Modeling**  
-Jimmy T.H. Smith, Shalini De Mello, Jan Kautz, Scott W. Linderman, Wonmin Byeon  
+**Convolutional State Space Models for Long-Range Spatiotemporal Modeling** 
+
+[Jimmy T.H. Smith](https://profiles.stanford.edu/jimmy-smith), 
+[Shalini De Mello](https://research.nvidia.com/person/shalini-de-mello),
+[Jan Kautz](https://jankautz.com), 
+[Scott Linderman](https://profiles.stanford.edu/scott-linderman), 
+[Wonmin Byeon](https://wonmin-byeon.github.io/), 
 Neural Information Processing Systems (NeurIPS), 2023.
 
 [arXiv](https://arxiv.org/abs/2310.19694)  
