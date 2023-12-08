@@ -7,10 +7,10 @@ paper:
 
 **Convolutional State Space Models for Long-Range Spatiotemporal Modeling** [[arXiv]](https://arxiv.org/abs/2310.19694) [[OpenReview]](https://openreview.net/forum?id=1ZvEtnrHS1&noteId=1ZvEtnrHS1)
 
-[Jimmy T.H. Smith](https://profiles.stanford.edu/jimmy-smith), 
+[Jimmy T.H. Smith](https://jimmysmith1919.github.io/), 
 [Shalini De Mello](https://research.nvidia.com/person/shalini-de-mello),
 [Jan Kautz](https://jankautz.com), 
-[Scott Linderman](https://profiles.stanford.edu/scott-linderman), 
+[Scott Linderman](https://web.stanford.edu/~swl1/), 
 [Wonmin Byeon](https://wonmin-byeon.github.io/)
 
 Neural Information Processing Systems (NeurIPS), 2023.
