@@ -1,0 +1,72 @@
+seed: 1
+cache: false # caching available only for encoded datasets
+
+# Training
+multinode: False
+batch_size: 8
+eval_size: 512
+num_workers: 4
+lr: 0.0005
+lr_schedule: "cosine"
+weight_decay: 0.00001
+total_steps: 250000
+warmup_steps: 5000
+save_interval: 2000
+viz_interval: 2000
+log_interval: 100
+
+# Data
+data_path: "/raid/dmlab"
+eval_seq_len: 300
+seq_len: 300
+image_size: 64
+channels: 3
+
+num_shards: null
+rng_keys: ["dropout", "sample"]
+batch_keys: ["video", "actions"]
+
+# Model
+model: "transformer"
+vqvae_ckpt:  "./dmlab_vqgan"
+
+encoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [256] # 16x16 -> 8x8
+  blocks: 1
+
+decoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [512] # 16x16 -> 8x8
+  blocks: 4
+
+z_ds: 16 # 16x16 -> 1x1
+z_tfm_kwargs:
+  embed_dim: 512
+  mlp_dim: 2048
+  num_heads: 16
+  num_layers: 8
+  dropout: 0.
+  attention_dropout: 0.
+
+
+embedding_dim: 512
+n_cond: 1
+
+# Causal Masking
+causal_masking: True
+frame_mask_id: -2
+
+# Actions
+use_actions: true
+action_dim: 6
+action_embed_dim: 16
+dropout_actions: true
+action_dropout_rate: 0.5
+action_mask_id: -1
+
+# Sampling
+open_loop_ctx: 36
+
+open_loop_ctx_1: 144
+action_conditioned_1: True
+open_loop_ctx_2: 36
+action_conditioned_2: False

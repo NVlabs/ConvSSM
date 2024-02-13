@@ -1,0 +1,94 @@
+seed: 1
+cache: false # caching available only for encoded datasets
+
+# Training
+multinode: True
+batch_size: 16
+eval_size: 1024
+num_workers: 4
+lr: 0.0005
+lr_schedule: "cosine"
+weight_decay: 0.00001
+total_steps: 500000
+warmup_steps: 5000
+save_interval: 2000
+viz_interval: 2000
+log_interval: 100
+
+# Data
+data_path: "/raid/minecraft"
+eval_seq_len: 300
+seq_len: 300
+image_size: 128
+channels: 3
+
+num_shards: null
+rng_keys: ["dropout", "sample"]
+batch_keys: ["video", "actions"]
+
+# Model
+model: "convS5"
+vqvae_ckpt: "./minecraft_vqgan"
+
+use_encoder: True
+encoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [256] # 16x16
+  blocks: 1 #blocks doesn't do anything here
+
+use_decoder: True
+decoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [512] # 16x16
+  blocks: 4
+
+d_model: 512
+
+# Sequence Model
+seq_model:
+  n_layers: 12
+  layer_activation: "gelu"
+  dropout: 0.0
+  use_norm: True
+  prenorm: False
+  per_layer_skip: True
+  num_groups: 32
+  squeeze_excite: False
+  skip_connections: False
+
+# SSM
+ssm:
+  ssm_size: 512
+  blocks: 1
+  clip_eigs: False
+  B_kernel_size: 3
+  C_kernel_size: 3
+  D_kernel_size: 3
+  dt_min: 0.001
+  dt_max: 0.1
+  C_D_config: "resnet"
+
+
+latent_height: 16
+latent_width: 16
+
+n_cond: 1
+drop_loss_rate: 0.9
+
+# Causal Masking
+causal_masking: False
+frame_mask_id: None
+
+# Actions
+use_actions: true
+action_dim: 6
+action_embed_dim: 16
+dropout_actions: false
+action_dropout_rate: 0.0
+action_mask_id: None
+
+# Sampling
+open_loop_ctx: 36
+
+open_loop_ctx_1: 144
+action_conditioned_1: True
+open_loop_ctx_2: 36
+action_conditioned_2: True

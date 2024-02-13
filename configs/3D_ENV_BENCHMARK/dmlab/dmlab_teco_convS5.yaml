@@ -1,0 +1,112 @@
+seed: 1
+cache: false # caching available only for encoded datasets
+
+# Training
+multinode: True
+batch_size: 16
+eval_size: 512
+num_workers: 4
+lr: 0.0005
+lr_schedule: "cosine"
+weight_decay: 0.00001
+total_steps: 500000
+warmup_steps: 5000
+save_interval: 2000
+viz_interval: 2000
+log_interval: 100
+
+# Data
+data_path: "/raid/dmlab"
+eval_seq_len: 300
+seq_len: 300
+image_size: 64
+channels: 3
+
+num_shards: null
+rng_keys: ["dropout", "sample"]
+batch_keys: ["video", "actions"]
+
+# Model
+model: "teco_convS5"
+vqvae_ckpt: "./dmlab_vqgan"
+
+encoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [256, 512] # 16x16 -> 8x8
+  blocks: 2
+
+decoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [256, 512] # 16x16 -> 8x8
+  blocks: 4
+
+d_model: 512
+
+# Sequence Model
+seq_model:
+  n_layers: 8
+  layer_activation: "gelu"
+  dropout: 0.0
+  use_norm: True
+  prenorm: False
+  per_layer_skip: True
+  num_groups: 32
+  squeeze_excite: False
+  skip_connections: False
+
+# SSM
+ssm:
+  ssm_size: 1024
+  blocks: 32
+  clip_eigs: False
+  B_kernel_size: 3
+  C_kernel_size: 3
+  D_kernel_size: 3
+  dt_min: 0.001
+  dt_max: 0.1
+  C_D_config: "resnet"
+
+#prior
+z_git:
+  vocab_dim: 256
+  mask_schedule: "cosine"
+  tfm_kwargs:
+    embed_dim: 512
+    mlp_dim: 2048
+    num_heads: 8
+    num_layers: 8
+    dropout: 0.
+    attention_dropout: 0.
+
+embedding_dim: 64
+codebook:
+  n_codes: 1024
+  proj_dim: 32
+
+latent_height: 8
+latent_width: 8
+
+n_cond: 1
+drop_loss_rate: 0.9
+
+# Causal Masking
+causal_masking: True
+frame_mask_id: -2
+
+# Actions
+use_actions: true
+action_dim: 6
+action_embed_dim: 16
+dropout_actions: true
+action_dropout_rate: 0.5
+action_mask_id: -1
+
+# Sampling
+T_draft: 8
+T_revise: 8
+M: 2
+
+open_loop_ctx: 36
+
+open_loop_ctx_1: 144
+action_conditioned_1: True
+open_loop_ctx_2: 36
+action_conditioned_2: False

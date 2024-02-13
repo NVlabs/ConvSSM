@@ -1,0 +1,92 @@
+seed: 1
+cache: false # caching available only for encoded datasets
+
+# Training
+multinode: False
+batch_size: 8
+eval_size: 1024
+num_workers: 4
+lr: 0.0005
+lr_schedule: "cosine"
+weight_decay: 0.00001
+total_steps: 300000
+warmup_steps: 5000
+save_interval: 4000
+viz_interval: 4000
+log_interval: 100
+
+# Data
+data_path: "/raid/moving_mnist_long_2"
+eval_seq_len_1: 800
+eval_seq_len_2: 1000
+seq_len: 600
+image_size: 64
+channels: 1
+
+num_shards: null
+rng_keys: ["dropout", "sample"]
+batch_keys: ["video", "actions"]
+
+# Model
+model: "convS5_noVQ"
+
+loss_weight: 0.5
+
+encoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [64, 128, 256] # 64x64 to 16x16
+  blocks: 1 #blocks doesn't do anything here
+
+decoder: # encoder / decoder are mirrored, with decoder depths reversed
+  depths: [64, 128, 256] # 16x16 to 64x64
+  blocks: 1
+
+d_model: 128
+
+# Sequence Model
+seq_model:
+  n_layers: 8
+  layer_activation: "gelu"
+  dropout: 0.0
+  use_norm: True
+  prenorm: False
+  per_layer_skip: True
+  num_groups: 32
+  squeeze_excite: False
+  skip_connections: False
+
+# SSM
+ssm:
+  ssm_size: 128
+  blocks: 1
+  clip_eigs: True
+  B_kernel_size: 3
+  C_kernel_size: 3
+  D_kernel_size: 3
+  dt_min: 0.001
+  dt_max: 0.1
+  C_D_config: "resnet"
+
+
+latent_height: 16
+latent_width: 16
+
+n_cond: 1
+drop_loss_rate: 0.0
+
+causal_masking: False
+
+# Actions
+use_actions: False
+action_dim: 1
+action_embed_dim: 1
+dropout_actions: False
+action_dropout_rate: 0.0
+action_mask_id: -1
+
+# Sampling
+open_loop_ctx: 100
+
+open_loop_ctx_1: 100
+action_conditioned_1: False
+open_loop_ctx_2: 100
+action_conditioned_2: False
