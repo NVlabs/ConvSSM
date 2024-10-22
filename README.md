@@ -67,16 +67,16 @@ Pretrained VQ-GAN checkpoints for each dataset can be found [here](https://drive
 ---
 
 ### Pretrained ConvS5 checkpoints: 
-Pretrained ConvS5 checkpoints for each dataset can be found [here](https://drive.google.com/drive/folders/1-JcF7qch-bz4Eapymw3Uv4OFg-s-URs5?usp=sharing). Download the checkpoints to the checkpoint_directories. 
+Pretrained ConvS5 checkpoints for each dataset can be found [here](https://www.dropbox.com/scl/fo/h3omm0bc3dau9uh9cgrq0/AICA1umpuN1LRG_MRwUyPWU?rlkey=s9w4d3ncsfz39n2r390dpbsk2&st=v722uk6x&dl=0). Download the checkpoints to the checkpoint_directories. 
 Default checkpoint_directory: `logs/<output_dir>/checkpoints/`
 
 | dataset | checkpoint | config |
 |:---:|:---:|:---:|
-| Moving-Mnist 300 | [link](https://drive.google.com/drive/folders/1-qYyPNKK5_wF5RsXUcKO_nzi8jQJ3ok1?usp=sharing)  | `Moving-MNIST/300_train_len/mnist_convS5_novq.yaml` |
-| Moving-Mnist 600 | [link](https://drive.google.com/drive/folders/1-h-RVvc6KJuJPaIrFtIbKbolr0cU3_o2?usp=sharing) | `Moving-MNIST/600_train_len/mnist_convS5_novq.yaml` |
-| DMLab | [link](https://drive.google.com/drive/folders/1-YfDv2oEY0MqFWGOwHRa5cs5WnjSctk_?usp=sharing) | `3D_ENV_BENCHMARK/dmlab/dmlab_convs5.yaml` |
-| Habitat | [link](https://drive.google.com/drive/folders/102ckQjxstpbjqmjW3xG-J6R-fpUhQdW2?usp=sharing) | `3D_ENV_BENCHMARK/habitat/habitat_teco_convS5.yaml`  |
-| Minecraft | [link](https://drive.google.com/drive/folders/100RROetFK5lvp6ckgGta-Q3jQPdb0qQP?usp=sharing)  | `3D_ENV_BENCHMARK/minecraft/minecraft_teco_convS5.yaml` |
+| Moving-Mnist 300 | [link](https://www.dropbox.com/scl/fo/wg6f4cazhlw5cs3fjfapf/AERdhoK8HARlwwlGvu8ZpLY?rlkey=spq6umv7m2scywntwgqswxvys&st=hpbemnp2&dl=0)  | `Moving-MNIST/300_train_len/mnist_convS5_novq.yaml` |
+| Moving-Mnist 600 | [link](https://www.dropbox.com/scl/fo/1vog37ntlr67084o6qbpm/AD8B3ZZIek9pxDvb80rhd4k?rlkey=krp36u6zbu8nac4foml9f3bq1&st=hmuymguf&dl=0) | `Moving-MNIST/600_train_len/mnist_convS5_novq.yaml` |
+| DMLab | [link](https://www.dropbox.com/scl/fo/dcy9nhw0umbowang36po1/AKPtYSxP2ynJnUDvoZsdxqc?rlkey=cw7bas02w2mw7ldyephu3w9r7&st=20wwyamh&dl=0) | `3D_ENV_BENCHMARK/dmlab/dmlab_convs5.yaml` |
+| Habitat | [link](https://www.dropbox.com/scl/fo/6k6tchauqaguilkr8rb7c/ACyEPN_X00f1xWM_RQFyDF8?rlkey=gx5o11o9n5npfj09gxac8hq2p&st=9k23lyfk&dl=0) | `3D_ENV_BENCHMARK/habitat/habitat_teco_convS5.yaml`  |
+| Minecraft | [link](https://www.dropbox.com/scl/fo/c4g2ol85hbt58kveoklek/AJvYilfaNdaap1V89u5Z5Oo?rlkey=1pv457c6bal7t2pisqx20s51i&st=8ft9r7d0&dl=0)  | `3D_ENV_BENCHMARK/minecraft/minecraft_teco_convS5.yaml` |
 
 ---
 
